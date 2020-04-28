@@ -23,7 +23,7 @@ my_house._Drawing__sleepat_room()
 my_house.sleep()  # 调用公共变量sleep方法打印房子特性
 my_house._Drawing__style2
 
-# 上下虽然实例化的是同一个类，但是概念上是不一样的
+# 上下虽然实例化的是同一个类，但是概念上是不一样
 
 bob_house = Drawing()  # 实例化
 bob_house.sleep()
