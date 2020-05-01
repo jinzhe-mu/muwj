@@ -1,4 +1,6 @@
-# 冒泡排序每一行加注释说明
+"""
+作用1 冒泡排序每一行加注释说明
+"""
 class BubbleSort():  # 定义一个BubbleSort类
     def bubble_sort(self, list_mu):   # 定义一个bubble_sort方法
         for i in range(len(list_mu)-1):    # 进行i-1次循环比较，i为list_mu的长度
