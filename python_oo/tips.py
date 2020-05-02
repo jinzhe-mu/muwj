@@ -32,7 +32,6 @@
 """
 nums = [12, 345, 2, 6, 7896]
 list1 = []
-
 # for i in nums:
 #     if len(str(i)) % 2 == 0:   # 用str做强制类型转换,取数组里面位数为偶数的数字
 #         list1.append(i)   # 将此数字传给数组list1
