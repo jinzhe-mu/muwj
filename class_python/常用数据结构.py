@@ -1,0 +1,19 @@
+"""一、列表
+定义：
+   1、python中可以通过组合一些值得到多种符合数据类型。
+   2、列表是其中最常用的数据结构。
+   3、列表通过方括号括起、逗号分隔的一组值得到。
+   4、一个列表可以包含不同类型的元素，但通常使用时各个元素类型相同
+列表的特性：
+   1、list.append(x):在列表的末尾添加一个元素。相当于a[len(a):]=[x]
+   2、list.insert(i,x):在给定的位置插入一个元素。第一个参数是要插入的元素的索引，
+   以a.insert(0,x)插入列表头部，a.insert(len(a),x)等同于a.append(x).
+   3、list.remove(x):移除列表中第一个值为x的元素。如果没有这样的元素，则抛出ValueError异常。
+   4、list.pop([i]):删除列表中给定的元素并返回它。如果没有给定位置，a.pop()将会删除并返回列表中的最后一个元素。
+   5、list.sort(key=None,reverse=False):对列表中的元素进行排序（参数可用于自定义排序，解释请参见sorted（）。
+   6、list.reverse():反转列表中的元素
+   7、list.clear()删除列表中所有的元素。相当于del a[:].
+   8、list.estend(iterable)：使用可迭代对象中的所有元素来扩展列表。相当于a[len(a)]=iterable。
+   9、list.index(x[,start[,end]])
+   10、返回列表中第一个值为x
+"""
