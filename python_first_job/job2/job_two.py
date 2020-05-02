@@ -15,6 +15,7 @@ class Cat:
         print("抓老鼠")
 
 my_cat = Cat()
+print("一、")
 print("我家的猫是", my_cat.colour, my_cat.age)
 my_cat.vioce()
 my_cat.function1()
@@ -36,6 +37,7 @@ class Tvxq:
         print("Max is the rapper")  # 调用此方法时打印内容
 
 tvxq = Tvxq()  # 实例化类Tvxq
+print("二、")
 tvxq.voice()  # 调用voice方法
 tvxq.rapper()  # 调用rapper方法
 
@@ -61,6 +63,7 @@ class Flower:
         self.dislike2()  # 调用dislike2方法
 
 flower=Flower()  # 实例化类Flower
+print("三、")
 flower.xiao_mei()  # 调用xiao_mei方法
 flower.mu()  # 调用mu方法
 
@@ -78,6 +81,7 @@ class Interest:
         print("周四二班有", self.curriculum1, "没有", self.curriculum3)  # 在方法中调用变量curriculum1\curriculum3
 
 interest = Interest()  # 实例化类
+print("四、")
 interest.class_one()  # 调用class_one方法
 
 xiao_ming = Interest()  # 实例化类
@@ -98,5 +102,6 @@ class Park:
         print("公园有各种各样的动物", self.animal2)  # 在方法中调用变量self.animal2并打印
 
 park=Park()  # 实例化类
+print("五、")
 park.animal()  #调用animal方法
 park.flower()  #调用flower方法
