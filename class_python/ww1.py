@@ -17,5 +17,3 @@ while True:
     else:
         print("猜对了")
         break
-
-
