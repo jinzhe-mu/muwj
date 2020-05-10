@@ -38,10 +38,11 @@ class PracticeExcel:  # 初始化一个PracticeExcel类
         for i in range(4):  # 循环4次
             height = sheet.cell(row=i + 2, column=2).value  # 取出第2列第i+2行的数据
             weight = sheet.cell(row=i + 2, column=3).value  # 取出第3列第i+2行的数据
+            name = sheet.cell(row=i + 2, column=1).value  # 取出第1列第i+2行的数据
 
             health_weight = (height - 70) * 0.6  # 定义一个健康体重的标准
             if weight == health_weight:  # 判断当weight等于健康体重标准时
-                print("这是健康的体重", weight)  # 打印出健康体重
+                print(name, "这是健康的体重", weight)  # 打印出健康体重
                 sheet.cell(row=i + 2, column=4).value = "健康体重"  # 在第4列的i+2位置写入“健康体重”
         ld.save(filename="data.xlsx")  # 保存data.xlsx表
 
