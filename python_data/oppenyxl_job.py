@@ -9,41 +9,41 @@
 
 from openpyxl import Workbook, load_workbook
 
-class PracticeExcel:
+class PracticeExcel:  # 初始化一个PracticeExcel类
 
-    wb = Workbook()
-    ws1 = wb.active
-    ws1.title = "create"
-    ws1["A1"] = "姓名"
-    ws1["B1"] = "身高"
-    ws1["C1"] = "体重"
-    ws1["D1"] = "备注"
-    name = ["dong", "fang", "shen", "qi"]
-    data_dict1 = {"dong": 180, "fang": 160, "shen": 170, "qi": 155}
-    data_keys1 = [i for i in data_dict1.keys()]
+    wb = Workbook()  # 定义一个变量wb
+    ws1 = wb.active  # 激活当前页面
+    ws1.title = "create"  # 给此页面赋值
+    ws1["A1"] = "姓名"  # 给A1单元格赋值
+    ws1["B1"] = "身高"  # 给B1单元格赋值
+    ws1["C1"] = "体重"  # 给C1单元格赋值
+    ws1["D1"] = "备注"  # 给D1单元格赋值
+    name = ["dong", "fang", "shen", "qi"]  # 定义一个列表
+    data_dict1 = {"dong": 180, "fang": 160, "shen": 170, "qi": 155}  # 定义一个字典，用列表的值做为字典的key值
+    data_keys1 = [i for i in data_dict1.keys()]  # 取出字典的key值
     data_dict2 = {data_dict1[data_keys1[0]]: 66, data_dict1[data_keys1[1]]: 51, data_dict1[data_keys1[2]]: 60, data_dict1[data_keys1[3]]: 81}
-    data_keys2 = [i for i in data_dict2.keys()]
+    # 用上个字典的value值做为这个字典的key值
+    data_keys2 = [i for i in data_dict2.keys()]  # 取出字典的key值
 
-    for i in range(len(name)):
-        ws1.cell(row=i + 2, column=1).value = data_keys1[i]
-        ws1.cell(row=i + 2, column=2).value = data_keys2[i]
-        ws1.cell(row=i + 2, column=3).value = data_dict2[data_keys2[i]]
+    for i in range(len(name)):  # 当i在列表长度范围内，做循环
+        ws1.cell(row=i + 2, column=1).value = data_keys1[i]  # 将data_keys1[i]的值循环放入列表第一列的第i+2行中
+        ws1.cell(row=i + 2, column=2).value = data_keys2[i]  # 将data_keys2[i]的值循环放入列表第二列的第i+2行中
+        ws1.cell(row=i + 2, column=3).value = data_dict2[data_keys2[i]]  # 将data_dict2[data_keys2[i]]的值循环放入列表第三列的第i+2行中
+    wb.save("data.xlsx")  # 保存Excel表以data名字，xlsx格式
 
-    wb.save("data.xlsx")
+    def health_data(self):  # 定义一个health_data方法
+        ld = load_workbook(filename="data.xlsx")  # 取出data.xlsx文件
+        sheet = ld["create"]  # 打开名称为create的页面
 
-    def health_data(self):
-        ld = load_workbook(filename="data.xlsx")
-        sheet = ld["create"]
+        for i in range(4):  # 循环4次
+            height = sheet.cell(row=i + 2, column=2).value  # 取出第2列第i+2行的数据
+            weight = sheet.cell(row=i + 2, column=3).value  # 取出第3列第i+2行的数据
 
-        for i in range(4):
-            height = sheet.cell(row=i + 2, column=2).value
-            weight = sheet.cell(row=i + 2, column=3).value
+            health_weight = (height - 70) * 0.6  # 定义一个健康体重的标准
+            if weight == health_weight:  # 判断当weight等于健康体重标准时
+                print("这是健康的体重", weight)  # 打印出健康体重
+                sheet.cell(row=i + 2, column=4).value = "健康体重"  # 在第4列的i+2位置写入“健康体重”
+        ld.save(filename="data.xlsx")  # 保存data.xlsx表
 
-            health_weight = (height - 70) * 0.6
-            if weight == health_weight:
-                print("这是健康的体重", weight)
-                sheet.cell(row=i + 2, column=4).value = "健康体重"
-        ld.save(filename="data.xlsx")
-
-pe = PracticeExcel()
-pe.health_data()
+pe = PracticeExcel()  # 实例化类
+pe.health_data()  # 调用health_data方法
