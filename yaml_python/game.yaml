@@ -1,0 +1,18 @@
+qiaofen:
+  hp: 1000
+  power: 100
+  skill: 3
+
+duanyi:
+  hp: 1008
+  power: 10
+  skill: 2
+
+xiaoln:
+  hp: 1007
+  power: 301
+  skill: 1
+
+default:
+  - qiaofen
+  - duanyi
