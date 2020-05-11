@@ -11,14 +11,14 @@ class Fight(Xuzhu):  # 定义一个子类Fight继承Xuzhu父类属性
 
         frequency = 0
 
-        while True:  # 当两个值不相等的时候
-            print(self.first, self.first_hp)
-            print(self.second, self.second_hp)
-            frequency += 1
-            if frequency % 3 == 1:
+        while True:
+            print(self.first, self.first_hp)  # 打印第一位人物此时的血量
+            print(self.second, self.second_hp)  # 打印第二位人物此时的血量
+            frequency += 1  # 轮寻
+            if frequency % 3 == 1:  # 当轮寻到3的倍数时
                 self.first_hp = self.first_hp - self.second_power * self.second_skill  # self.first剩余血量=self.first初始血量-self.second攻击力*skill将攻击力翻倍值
                 self.second_hp = self.second_hp - self.first_power * self.first_skill  # self.second的剩余血量=self.second初始血量-攻击力*skill将攻击力翻倍值
-            else:
+            else:  # 否则
                 self.first_hp = self.first_hp - self.second_power  # self.first剩余血量=self.first初始血量-self.second攻击力
                 self.second_hp = self.second_hp - self.first_power  # self.second剩余血量=self.second初始血量-self.first攻击力
             if self.first_hp <= 0:  # self.first的hp小于等于0
