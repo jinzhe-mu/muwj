@@ -1,0 +1,28 @@
+tonglao:
+  hp: 1000
+  power: 100
+  skill: 3
+
+xuzhu:
+  hp: 1008
+  power: 10
+  skill: 2
+
+wyx:
+  hp: 1007
+  power: 301
+  skill: 2
+
+liqiushui:
+  hp: 1008
+  power: 302
+  skill: 1
+
+dingcx:
+  hp: 1009
+  power: 303
+  skill: 1
+
+default:
+  - tonglao
+  - xuzhu
