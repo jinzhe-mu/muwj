@@ -5,7 +5,6 @@ import yaml  # 导入yaml包
 from testing.calc import Calc  # 导入testing包下的calc.py文件中的Calc类
 
 
-
 class TestCalc():  # 定义测试类
     def setup_class(sefl):  # 定义steup_class 方法（类级别）
         sefl.calc = Calc()  # 实例化Calc类
