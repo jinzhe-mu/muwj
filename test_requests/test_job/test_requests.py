@@ -17,6 +17,7 @@ class TestDepartment:
     #     self.driver.quit()
 
 
+
     # 创建标签
     def test_create_label(self):
         url = "https://qyapi.weixin.qq.com/cgi-bin/tag/create"
@@ -24,8 +25,8 @@ class TestDepartment:
             "access_token": self.token
         }
         json = {
-            "tagname": "惊蛰1",
-            "tagid": 12
+            "tagname": "惊蛰4",
+            "tagid": 15
         }
         r = requests.post(url=url, params=params, json=json)
         print(r.json())
@@ -38,8 +39,8 @@ class TestDepartment:
             "access_token": self.token
         }
         json = {
-            "tagid": 12,
-            "tagname": "惊蛰2"
+            "tagid": 15,
+            "tagname": "惊蛰5"
             }
         r = requests.post(url=url, params=params, json=json)
         print(r.json())
@@ -50,7 +51,7 @@ class TestDepartment:
         url = "https://qyapi.weixin.qq.com/cgi-bin/tag/delete"
         params = {
             "access_token": self.token,
-            "tagid": "12"
+            "tagid": "15"
         }
         r = requests.get(url=url, params=params)
         print(r.json())
@@ -61,7 +62,7 @@ class TestDepartment:
         url = "https://qyapi.weixin.qq.com/cgi-bin/tag/get"
         params = {
             "access_token": self.token,
-            "tagid": 12
+            "tagid": 14
         }
         r = requests.get(url=url, params=params)
         print(r.json())
@@ -74,7 +75,7 @@ class TestDepartment:
             "access_token": self.token
         }
         json = {
-            "tagid": 12,
+            "tagid": 14,
             "userlist": ["a1","a2"],
              "partylist" : [1]
         }
@@ -89,7 +90,7 @@ class TestDepartment:
             "access_token": self.token
         }
         json = {
-            "tagid": 12,
+            "tagid": 13,
             "userlist": ["a1", "a2"],
             "partylist": [1]
         }
